@@ -1,3 +1,15 @@
+# MetaverseDragonAR — Modular AR Dragon Interaction System
+
+![Status](https://img.shields.io/badge/status-active%20development-yellow.svg)
+![Engine](https://img.shields.io/badge/engine-Unity-000000.svg)
+![Language](https://img.shields.io/badge/language-C%23-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Android%20%7C%20iOS-lightgrey.svg)
+![AR](https://img.shields.io/badge/AR-AR%20Foundation-informational.svg)
+![XR](https://img.shields.io/badge/XR-ARCore%20%7C%20ARKit-success.svg)
+![Architecture](https://img.shields.io/badge/architecture-modular%20%7C%20extensible-blueviolet.svg)
+![Input](https://img.shields.io/badge/input-New%20Input%20System-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 DragonAR is an augmented reality game that lets players control various types of dragons in the real world. Place your dragon in your environment, customize its appearance, and command it to fly, breathe fire, and unleash fireballs.
 
 ## Design Philosophy
