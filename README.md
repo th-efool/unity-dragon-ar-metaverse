@@ -1,5 +1,7 @@
 # MetaverseDragonAR — Modular AR Dragon Interaction System
 
+DragonAR is an augmented reality game that lets players control various types of dragons in the real world. Place your dragon in your environment, customize its appearance, and command it to fly, breathe fire, and unleash fireballs.
+
 ![Status](https://img.shields.io/badge/status-active%20development-yellow.svg)
 ![Engine](https://img.shields.io/badge/engine-Unity-000000.svg)
 ![Language](https://img.shields.io/badge/language-C%23-blue.svg)
@@ -7,10 +9,7 @@
 ![AR](https://img.shields.io/badge/AR-AR%20Foundation-informational.svg)
 ![XR](https://img.shields.io/badge/XR-ARCore%20%7C%20ARKit-success.svg)
 ![Architecture](https://img.shields.io/badge/architecture-modular%20%7C%20extensible-blueviolet.svg)
-![Input](https://img.shields.io/badge/input-New%20Input%20System-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-
-DragonAR is an augmented reality game that lets players control various types of dragons in the real world. Place your dragon in your environment, customize its appearance, and command it to fly, breathe fire, and unleash fireballs.
 
 ## Design Philosophy
 Throughout the project, my aim has been to make the codebase as extensible as possible - supporting additional scenes,dragon types, skins, and sound effects with minimal changes to existing code. That's why i have implemented various systems and organizational structures to achieve this goal.
