@@ -183,7 +183,7 @@ IEnumerator AsyncLoad(LevelList SelectedLevel)
 ### Dragon Selection System
 <img
   src="https://github.com/th-efool/unity-dragon-ar-metaverse/blob/main/Packages/gandr-collage%20(1).jpg?raw=true"
-  width="70%"
+  width="80%"
 />
 
 The dragon selection carousel demonstrates the project's extensibility-focused design:
