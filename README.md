@@ -17,6 +17,50 @@ Throughout the project, my aim has been to make the codebase as extensible as po
 ## Core Design Patterns
 
 ### Singleton Pattern Implementation
+<table style="width:100%; border-collapse:collapse;">
+  <tr>
+    <!-- LEFT: CODE -->
+    <td style="width:50%; vertical-align:top; padding-right:16px; border-right:1px solid #d0d7de;">
+      
+<pre><code class="language-csharp">
+public class Singleton&lt;T&gt; : MonoBehaviour where T : MonoBehaviour
+{
+    private static object m_Lock = new object();
+    private static T m_Instance;
+    
+    [SerializeField] public bool dontDestroyOnLoad = true;
+    [SerializeField] public bool CanICreateItAgain = false;
+    
+    // Implementation details...
+}
+</code></pre>
+
+    </td>
+
+    <!-- RIGHT: TEXT -->
+    <td style="width:50%; vertical-align:top; padding-left:16px;">
+      
+<strong>Singleton Pattern Implementation</strong><br><br>
+
+The project uses a custom <code>Singleton&lt;T&gt;</code> that improves on
+traditional Unity singletons by adding lifecycle control and safety.
+
+<br><br>
+
+<strong>Design Decisions:</strong>
+<ul>
+  <li><strong>Configurable Persistence</strong> – Optional DontDestroyOnLoad</li>
+  <li><strong>Controlled Re-instantiation</strong> – Allow recreation after destroy</li>
+  <li><strong>Safe Shutdown Handling</strong> – Prevents ghost access</li>
+  <li><strong>Automatic Instance Creation</strong> – Self-instantiates on demand</li>
+</ul>
+
+Used by <code>PlayerData</code>, <code>DragonUI</code>, and
+<code>CustomSceneLoader</code> for global services without hard references.
+
+    </td>
+  </tr>
+</table>
 
 The project extensively uses a custom singleton implementation (`Singleton<T>`) that provides several advantages over traditional Unity singletons:
 
