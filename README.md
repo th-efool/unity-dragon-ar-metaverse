@@ -18,48 +18,29 @@ Throughout the project, my aim has been to make the codebase as extensible as po
 
 ### Singleton Pattern Implementation
 
-The project uses a custom <code>Singleton&lt;T&gt;</code> that improves on
-traditional Unity singletons by adding lifecycle control and safety.<br><br>
-
-<table width="100%" cellspacing="0" cellpadding="0">
-<tr>
-
-<td width="50%" valign="top" style="padding-right:16px;border-right:1px solid #d0d7de;">
-
-<pre><code class="language-csharp">public class Singleton&lt;T&gt; : MonoBehaviour where T : MonoBehaviour
-{
-    private static object m_Lock = new object();
-    private static T m_Instance;
-
-    [SerializeField] public bool dontDestroyOnLoad = true;
-    [SerializeField] public bool CanICreateItAgain = false;
-
-    // Implementation details...
-}
-</code></pre>
-
-</td>
-
-<td width="50%" valign="top" style="padding-left:16px;">
-<strong>Design Decisions:</strong>
-<ul>
-  <li><strong>Configurable Persistence</strong> – Optional DontDestroyOnLoad</li>
-  <li><strong>Controlled Re-instantiation</strong> – Allow recreation after destroy</li>
-  <li><strong>Safe Shutdown Handling</strong> – Prevents ghost access</li>
-  <li><strong>Automatic Instance Creation</strong> – Self-instantiates on demand</li>
-</ul>
-
-
-</td>
-
-</tr>
-</table>
-
-
 The project extensively uses a custom singleton implementation (`Singleton<T>`) that provides several advantages over traditional Unity singletons:
 
-Used by <code>PlayerData</code>, <code>DragonUI</code>, and
-<code>CustomSceneLoader</code> for global services without hard references.
+```csharp
+public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+{
+    // Core implementation with thread safety via locking
+    private static object m_Lock = new object();
+    private static T m_Instance;
+    
+    [SerializeField] public bool dontDestroyOnLoad = true;
+    [SerializeField] public bool CanICreateItAgain = false;
+    
+    // Implementation details...
+}
+```
+
+**Design Decisions:**
+- **Configurable Persistence**: Toggle for DontDestroyOnLoad behavior
+- **Controlled Re-instantiation**: Option to allow singleton recreation after destruction
+- **Safe Shutdown Handling**: Prevents access to destroyed instances
+- **Automatic Instance Creation**: Self-instantiates when accessed if no instance exists
+
+This pattern is used by `PlayerData`, `DragonUI`, and `CustomSceneLoader` to provide globally accessible services without relying on direct references.
 
 ### Enum-Based Structure
 
